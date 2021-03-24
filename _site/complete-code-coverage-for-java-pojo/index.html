@@ -73,6 +73,16 @@
 	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
 	<!-- Styles -->
 	<link rel="stylesheet" href="/assets/css/main.css">
+  <script data-ad-client="ca-pub-6455547639068366" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPEL7Z8J2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WPEL7Z8J2E');
+</script>
 </head>
 
 <body>
@@ -130,7 +140,109 @@
         <h1 class="page-title">Complete code coverage for Java Pojo</h1>
         <div class="page-date"><span>2021, Jan 26&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
       </header>
-      <h3 id="in-progress">In Progress</h3>
+      <h4 id="why-code-coverage-of-java-pojo-is-necessary">Why code coverage of java pojo is necessary.</h4>
+
+<ul>
+  <li>Sometimes team feels that 85% or 90% is good enough coverage, as 10% belongs to java value objcts and other non-critical codes.</li>
+  <li>Anything less than 99% coverages is not ideal, as developers or team many miss critical business code which may fall within 10% missed coverages.</li>
+  <li>This java pojo tester will give code coverages for the pojo, so that developers/ team can achieve 95+% coverages and team has no exception.</li>
+</ul>
+
+<h4 id="import-the-java-pojo-utility">Import the java pojo utility</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:nilaybose/javaUnitTesting.git
+import as a maven project
+</code></pre></div></div>
+
+<h3 id="features">Features</h3>
+
+<ul>
+  <li>100% code coverages</li>
+  <li>Ability to test java immutable objects without setters.</li>
+  <li>Able to scan and do code coverages of all constructors.</li>
+  <li>Able to do code coverages of Equals and Hash code methods and check missed implementations.</li>
+  <li>Ability to test interface/ abstract class as class field types</li>
+</ul>
+
+<h4 id="examples">Examples</h4>
+<ul>
+  <li>Refer the class <a href="https://github.com/nilaybose/javaUnitTesting/blob/master/src/test/java/bose/edu/junit/util/PojoTester.java">PojoTester</a></li>
+</ul>
+
+<h4 id="examples-code-coverage-without-equals-and-hash">Examples Code coverage without Equals and Hash</h4>
+<ul>
+  <li>Source <a href="https://github.com/nilaybose/javaUnitTesting/blob/master/src/main/java/bose/edu/junit/day1/GenericProduct.java">GenericProduct</a></li>
+  <li>Test <a href="https://github.com/nilaybose/javaUnitTesting/blob/master/src/test/java/bose/edu/junit/day1/TestGenericProduct.java">TestGenericProduct</a>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Test</span>
+  <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"Pojo setter getter test"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">assertThat</span><span class="o">(</span><span class="s">"Validation passes"</span><span class="o">,</span> 
+      <span class="nc">PojoTester</span><span class="o">.</span><span class="na">validate</span><span class="o">(</span><span class="nc">GenericProduct</span><span class="o">.</span><span class="na">class</span><span class="o">),</span> <span class="n">is</span><span class="o">(</span><span class="kc">true</span><span class="o">));</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Code coverage
+<img src="/assets/img/pojo_wohe.png" alt="Code Coverage" /></li>
+</ul>
+
+<h4 id="examples-code-coverage-with-equals-and-hash">Examples Code coverage with Equals and Hash</h4>
+
+<ul>
+  <li>Source <a href="https://github.com/nilaybose/javaUnitTesting/blob/master/src/main/java/bose/edu/junit/day1/GenericProductWithHashEquals.java">GenericProductWithHashEquals</a></li>
+  <li>Test <a href="https://github.com/nilaybose/javaUnitTesting/blob/master/src/test/java/bose/edu/junit/day1/TestGenericProductWithHashEquals.java">TestGenericProductWithHashEquals</a>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Test</span>
+  <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"Pojo setter getter test"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">assertThat</span><span class="o">(</span><span class="s">"Validation passes"</span><span class="o">,</span>
+      <span class="nc">PojoTester</span><span class="o">.</span><span class="na">validateWithEqualsAndHashcode</span><span class="o">(</span>
+      <span class="nc">GenericProductWithHashEquals</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="kc">null</span><span class="o">),</span> <span class="n">is</span><span class="o">(</span><span class="kc">true</span><span class="o">));</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Code coverage
+<img src="/assets/img/pojo_whe.png" alt="Code Coverage" /></li>
+</ul>
+
+<h4 id="examples-ignore-fields-in-setter-getter-tests-equality-hashcode-test">Examples ignore fields in Setter getter tests/ Equality, hashcode test</h4>
+<ul>
+  <li>There are many methods of validate we can use to ignore fields in setter/ getter tests or Equals/ Hash Code test
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">validateWithEqualsAndHashcode</span><span class="o">(</span><span class="nc">Class</span><span class="o">&lt;?&gt;</span> <span class="n">clazz</span><span class="o">,</span>
+                               <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Class</span><span class="o">&lt;?&gt;,</span> <span class="nc">Supplier</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">customMappers</span><span class="o">,</span>
+                               <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">ignoreFields</span><span class="o">,</span>
+                               <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">ignoredEqualsAndHash</span><span class="o">)</span> <span class="o">{</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Below code snippet will not match the <strong>name</strong> field for the class <strong>GenericProductWithHashEquals</strong>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">PojoTester</span><span class="o">.</span><span class="na">validate</span><span class="o">(</span>
+          <span class="nc">GenericProductWithHashEquals</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="nc">Sets</span><span class="o">.</span><span class="na">newLinkedHashSet</span><span class="o">(</span><span class="s">"name"</span><span class="o">));</span>
+
+  <span class="nc">PojoTester</span><span class="o">.</span><span class="na">validateWithEqualsAndHashcode</span><span class="o">(</span>
+  <span class="nc">GenericProductWithHashEquals</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="c1">//Object under test</span>
+  <span class="kc">null</span><span class="o">,</span> <span class="c1">// No custom mapper</span>
+  <span class="nc">Sets</span><span class="o">.</span><span class="na">newLinkedHashSet</span><span class="o">(</span><span class="s">"name"</span><span class="o">),</span> <span class="c1">// No setter check of name field</span>
+  <span class="nc">Sets</span><span class="o">.</span><span class="na">newLinkedHashSet</span><span class="o">(</span><span class="s">"name"</span><span class="o">)));</span> <span class="c1">// No equals/ hash code check for name field</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="custom-mapper">Custom Mapper</h4>
+<ul>
+  <li>We use suppliers to create the field type of the objects to initialize and tests</li>
+  <li>We can pass in a custom mapper if the field type is interface, abstract class or any types not defined in Pojo Tester</li>
+  <li>If the field of class has SortedSet, which is not defined in default suppliers, we can pass as custom mapper</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Class</span><span class="o">&lt;?&gt;,</span> <span class="nc">Supplier</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">customMappers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">customMappers</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="nc">SortedSet</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> 
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="nc">TreeSet</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TreeSet</span><span class="o">();</span> <span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span> <span class="k">return</span> <span class="n">s</span><span class="o">;});</span>
+
+        <span class="nc">PojoTester</span><span class="o">.</span><span class="na">validateWithEqualsAndHashcode</span><span class="o">(</span>
+                <span class="nc">GenericProductWithHashEquals</span><span class="o">.</span><span class="na">class</span><span class="o">,</span>
+                <span class="n">customMappers</span><span class="o">,</span> 
+                <span class="nc">Sets</span><span class="o">.</span><span class="na">newLinkedHashSet</span><span class="o">(</span><span class="s">"name"</span><span class="o">),</span> <span class="c1">// No setter check of name field</span>
+                <span class="nc">Sets</span><span class="o">.</span><span class="na">newLinkedHashSet</span><span class="o">(</span><span class="s">"name"</span><span class="o">));</span> <span class="c1">// No equals/ hash code check for name field</span>
+</code></pre></div></div>
+
+<p><strong>Note</strong> - if you find this helpful, please like my project in github</p>
 
       <div class="page-footer">
         <div class="page-share">
