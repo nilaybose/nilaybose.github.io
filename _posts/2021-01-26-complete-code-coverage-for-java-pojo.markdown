@@ -5,7 +5,7 @@ date: 2021-01-26 21:00:00 +0530
 description: Complete code coverage for Java Pojo
 img: junit_pojo.png
 fig-caption: 
-tags: [junit5, unit-testing]
+tags: [junit, unit-testing, code coverage, java, pojo]
 ---
 
 #### Why code coverage of java pojo is necessary.
