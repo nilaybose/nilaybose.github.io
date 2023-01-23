@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Complete code coverage for Java Pojo
-date: 2021-01-26 21:00:00 +0530
+date: 2022-01-23 21:00:00 +0530
 description: Complete code coverage for Java Pojo
 img: junit_pojo.png
 fig-caption: 
