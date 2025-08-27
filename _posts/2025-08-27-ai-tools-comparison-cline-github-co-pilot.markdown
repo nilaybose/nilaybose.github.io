@@ -17,7 +17,7 @@ tags: [AI, Cline, Github Co pilot]
 **Credits & Resources:**
 - Cline Documentation - For autonomous AI coding capabilities and best practices
 - GitHub Copilot Documentation - For code completion features and usage guidelines  
-- Google Cloud $300 Free Credit - For testing and cost analysis of various AI models
+- Google Cloud $300 Free Credit - For testing and playing with cline
 - Vibe documentation using bolts.new
 
 ---
